@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn clean *)",
+      "Bash(mvn spring-boot:run)",
+      "Bash(curl -s http://localhost:8080/upload -X POST -F \"file=@pom.xml\")",
+      "Bash(curl -s http://localhost:8080/depts)",
+      "Bash(taskkill //F //IM java.exe)",
+      "Bash(curl -s http://localhost:8080/login -X POST -H \"Content-Type: application/json\" -d '{\"username\":\"admin\",\"password\":\"123456\"}')"
+    ]
+  }
+}
