@@ -1,0 +1,191 @@
+/* ===== Design Tokens ===== */
+:root {
+  --app-primary: #0d9488;
+  --app-primary-light: #14b8a6;
+  --app-primary-dark: #0f766e;
+  --app-accent: #0284c7;
+  --app-header-start: #0c4a6e;
+  --app-header-end: #0d9488;
+
+  --app-bg: #f1f5f9;
+  --app-surface: #ffffff;
+  --app-border: #e2e8f0;
+  --app-border-light: #f1f5f9;
+
+  --app-text: #1e293b;
+  --app-text-secondary: #64748b;
+  --app-text-muted: #94a3b8;
+
+  --app-radius-sm: 6px;
+  --app-radius: 10px;
+  --app-radius-lg: 14px;
+
+  --app-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --app-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --app-shadow-lg: 0 8px 32px rgba(15, 23, 42, 0.12);
+
+  --app-spacing-xs: 8px;
+  --app-spacing-sm: 12px;
+  --app-spacing: 16px;
+  --app-spacing-lg: 24px;
+  --app-spacing-xl: 32px;
+
+  --app-sidebar-width: 220px;
+  --app-header-height: 60px;
+
+  /* Element Plus theme overrides */
+  --el-color-primary: var(--app-primary);
+  --el-color-primary-light-3: #5eead4;
+  --el-color-primary-light-5: #99f6e4;
+  --el-color-primary-light-7: #ccfbf1;
+  --el-color-primary-light-8: #f0fdfa;
+  --el-color-primary-light-9: #f0fdfa;
+  --el-color-primary-dark-2: var(--app-primary-dark);
+  --el-border-radius-base: var(--app-radius-sm);
+  --el-font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* ===== Base Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--el-font-family);
+  color: var(--app-text);
+  background-color: var(--app-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Page Layout Patterns ===== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-spacing);
+  min-height: 100%;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--app-spacing-sm);
+}
+
+.page-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--app-text);
+  letter-spacing: 0.02em;
+}
+
+.page-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: linear-gradient(180deg, var(--app-primary), var(--app-accent));
+  border-radius: 2px;
+}
+
+.page-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+  padding: var(--app-spacing-lg);
+}
+
+.search-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+  padding: var(--app-spacing-lg) var(--app-spacing-lg) 4px;
+}
+
+.search-card .el-form-item {
+  margin-bottom: var(--app-spacing);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--app-spacing-sm);
+  flex-wrap: wrap;
+}
+
+.table-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+  padding: var(--app-spacing);
+  overflow: hidden;
+}
+
+.table-card .el-table {
+  --el-table-border-color: var(--app-border-light);
+  --el-table-header-bg-color: #f8fafc;
+  --el-table-header-text-color: var(--app-text-secondary);
+  border-radius: var(--app-radius-sm);
+}
+
+.table-card .el-table th.el-table__cell {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--app-spacing-sm) var(--app-spacing);
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+}
+
+/* ===== Shared Component Tweaks ===== */
+.el-button {
+  border-radius: var(--app-radius-sm);
+  font-weight: 500;
+}
+
+.el-dialog {
+  border-radius: var(--app-radius-lg) !important;
+}
+
+.el-dialog__header {
+  border-bottom: 1px solid var(--app-border-light);
+  margin-right: 0;
+  padding-bottom: var(--app-spacing);
+}
+
+.el-dialog__title {
+  font-weight: 600;
+  color: var(--app-text);
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  border-radius: var(--app-radius-sm) !important;
+}
+
+.el-tag {
+  border-radius: 999px;
+}
